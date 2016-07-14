@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>We are BlueSquare</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400|Roboto:100,300,400,900' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fortawesome.com/e59ad784.js"></script>
+</head>
+<body>
+  <section class="screen text">
+    <div class="content">
+      <h1 class="text-center">We are BlueSquare</h1>
+      <h2 class="text-center">We make Social Impact</h2>
+      <a href="#" class="scroll center-block">Scroll for more</a>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen entity">
+    <div class="overlay right">
+      <h1>7 051 <i class="fa fa-icon-facility"></i></h1>
+      <h2>facilities helped in 19 countries</h2>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen text">
+    <div class="content">
+      <h1 class="text-center">We help facilities be rewarded for the services they provide</h1>
+      <h2 class="text-center">We think that the most efficient way to spend resources is allowing the people on the field to decide where they are the most needed</h2>
+      <a href="#" class="scroll center-block"></a>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen people">
+    <div class="overlay left">
+      <h1>61 990 552 <i class="fa fa-icon-population"></i></h1>
+      <h2>people benefitting from services</h2>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen text">
+    <div class="content">
+      <h1 class="text-center">We help bring services where it matters</h1>
+      <h2 class="text-center">Where people in need can benefit from them</h2>
+      <a href="#" class="scroll center-block"></a>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen money">
+    <div class="overlay right">
+      <h1><span class="money-number" data-number="61990552">60 953 914</span> <i class="fa fa-icon-money"></i></h1>
+      <h2>dollars channelled to health services</h2>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen text">
+    <div class="content">
+      <h1 class="text-center">We help channeling gouvernements and donors money</h1>
+      <h2 class="text-center">to maximize their impact on the field</h2>
+      <a href="#" class="scroll center-block"></a>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <section class="screen team">
+    <div class="overlay left">
+      <h1>Interested?</h1>
+      <h2>Contact us at <a href="mailto:info@bluesquare.org">info@bluesquare.org</a></h2>
+    </div>
+    <img class="logo" src="images/logo.png" alt="">
+  </section>
+  <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+  <script src="https://raw.githubusercontent.com/lukehaas/Scrollify/master/jquery.scrollify.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="js/jquery.number.min.js"></script>
+  <script>
+    $(function() {
+        $.scrollify({
+            section : ".screen",
+        });
+
+        $(".scroll,.scroll-btn").click(function(e) {
+          e.preventDefault();
+          $.scrollify.next();
+        });
+
+        window.setInterval(function() { 
+          var value = Number($(".money-number").data("number"));
+          value += 1;
+          var formattedValue = $.number(value, 0, ',', ' ' );
+          $(".money-number").html(formattedValue);
+          $(".money-number").data("number", value);
+        }, 500);
+    });
+  </script>
+</body>
+</html>
